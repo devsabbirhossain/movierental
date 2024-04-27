@@ -1,11 +1,26 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { MovieContext } from "../../lib/context/context";
 import { getImageURL } from "../../lib/utilities/getImages";
-import MovieDetails from "./MovieDetails";
 import MovieRatings from "./MovieRatings";
 
 const MovieCard = ({ movie }) => {
   const [ShowModal, setShowModal] = useState(false);
   const [SelectedMovie, setSelectedMovie] = useState(null);
+  const { cartData, setCartData } = useContext(MovieContext);
+
+  function handleAddToCart(event, movie) {
+    event.preventDefault();
+
+    const found = cartData.find((item) => {
+      return item.id === movie.id;
+    });
+
+    if (!found) {
+      setCartData([...cartData, movie]);
+    } else {
+      console.log("Added Already");
+    }
+  }
 
   function handleModalClose() {
     setSelectedMovie(null);
@@ -31,6 +46,7 @@ const MovieCard = ({ movie }) => {
           <p className="text-[#575A6E] text-sm mb-2">{movie.genre}</p>
           <MovieRatings rating={movie.ratings} />
           <a
+            onClick={(event) => handleAddToCart(event, movie)}
             className="bg-primary rounded-lg py-2 px-5 flex items-center justify-center gap-2 text-[#171923] font-semibold text-sm"
             href="#">
             <img src="./assets/tag.svg" alt="" />
