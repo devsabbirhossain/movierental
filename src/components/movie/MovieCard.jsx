@@ -23,11 +23,13 @@ const MovieCard = ({ movie }) => {
     }
   }
 
-  function handleModalClose() {
+  function handleModalClose(event) {
+    event.preventDefault();
     setSelectedMovie(null);
     setShowModal(false);
   }
-  function handleSelectionMovie(movie) {
+  function handleSelectionMovie(event, movie) {
+    event.preventDefault();
     setSelectedMovie(movie);
     setShowModal(true);
   }
@@ -58,7 +60,7 @@ const MovieCard = ({ movie }) => {
             <span>${movie.price} | Add to Cart</span>
           </a>
           <a
-            onClick={() => handleSelectionMovie(movie)}
+            onClick={(e) => handleSelectionMovie(event, movie)}
             className="text-gray-200 border border-[#74766F] rounded-lg py-2 px-5 mt-4 flex items-center justify-center gap-2 text-[#323334] font-semibold text-sm"
             href="#">
             <img src="./assets/tag.svg" alt="" />
