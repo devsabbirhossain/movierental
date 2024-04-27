@@ -10,7 +10,6 @@ const Header = () => {
   const [ShowCart, setShowCart] = useState(false);
 
   const { cartData } = useContext(MovieContext);
-  console.log(cartData);
 
   function handleSeeCartDetails() {
     event.preventDefault();

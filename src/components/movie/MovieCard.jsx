@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { MovieContext } from "../../lib/context/context";
 import { getImageURL } from "../../lib/utilities/getImages";
+import MovieDetails from "./MovieDetails";
 import MovieRatings from "./MovieRatings";
 
 const MovieCard = ({ movie }) => {
@@ -33,7 +34,11 @@ const MovieCard = ({ movie }) => {
   return (
     <>
       {ShowModal && (
-        <MovieDetails movie={SelectedMovie} onClose={handleModalClose} />
+        <MovieDetails
+          movie={SelectedMovie}
+          onClose={handleModalClose}
+          onCardAdd={handleAddToCart}
+        />
       )}
       <figure className="p-4 border border-black/10 shadow-sm dark:border-white/10 rounded-xl">
         <img
