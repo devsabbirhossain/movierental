@@ -2,7 +2,7 @@ import DeleteIcon from "../../assets/delete.svg";
 import CheckoutIcon from "../../assets/icons/checkout.svg";
 
 import { useContext } from "react";
-import { MovieContext } from "../../lib/context/context";
+import { MovieContext } from "../../lib/context/MovieContext";
 import { getImageURL } from "../../lib/utilities/getImages";
 
 const CartDetails = ({ onClose }) => {

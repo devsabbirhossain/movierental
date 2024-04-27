@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { MovieContext } from "../../lib/context/context";
+import { MovieContext } from "../../lib/context/MovieContext";
 import { getImageURL } from "../../lib/utilities/getImages";
 import MovieDetails from "./MovieDetails";
 import MovieRatings from "./MovieRatings";

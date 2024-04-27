@@ -5,7 +5,7 @@ import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
 
 import { useState } from "react";
-import { MovieContext } from "./lib/context/context";
+import { MovieContext } from "./lib/context/MovieContext";
 
 function App() {
   const [cartData, setCartData] = useState([]);

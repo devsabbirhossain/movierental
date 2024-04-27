@@ -3,7 +3,7 @@ import moon from "../assets/icons/moon.svg";
 import logo from "../assets/logo.svg";
 import ring from "../assets/ring.svg";
 import shoppingCart from "../assets/shopping-cart.svg";
-import { MovieContext } from "../lib/context/context";
+import { MovieContext } from "../lib/context/MovieContext";
 import CartDetails from "./cart/CartDetails";
 
 const Header = () => {
